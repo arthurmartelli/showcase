@@ -1,7 +1,5 @@
 # Rocket RESTful API
 
-> CRUD API Experiment for TODO List App
-
 This repository contains an experiment for a CRUD (Create, Read, Update, Delete) API for a TODO list app written in Rust using the Rocket framework. The purpose of this experiment is to evaluate the performance, reliability, and ease of use of the API.
 
 ## Requirements
@@ -13,7 +11,7 @@ This repository contains an experiment for a CRUD (Create, Read, Update, Delete)
 
 To install the app, clone this repository to your local machine and run the following command:
 
-```powershell
+```bash
 cargo run
 ```
 
@@ -35,7 +33,3 @@ For more information about each endpoint and its expected inputs and outputs, pl
 ## Contributing
 
 If you would like to contribute to this project, please fork the repository and submit a pull request with your changes.
-
-## License
-
-This project is licensed under the [MIT License](./LICENSE).

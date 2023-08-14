@@ -1,12 +1,13 @@
 # Rust Multithreaded Web Server
 
-This is a simple multithreaded web server written in Rust. It uses the std::net library to listen for incoming connections on a specified port, and serves files from a specified directory.
+This is a multithreaded web server written in Rust. It uses the std::net library to listen for incoming connections on a specified port, and serves files from a specified directory.
+
+## Requirements
+
+- Rust 1.55.0 or later
+- Rocket 0.5.0 or later
 
 ## Getting Started
-
-To run the server, you'll need Rust installed on your machine. You can download it from the official Rust website: https://www.rust-lang.org/tools/install
-
-Once Rust is installed, you can clone this repository and run the server using the following commands:
 
 ```bash
 git clone https://github.com/yourusername/rust-multithreaded-web-server.git
@@ -36,10 +37,6 @@ This server has the following features:
 - Simple: The server is designed to be easy to understand and modify. It uses a minimal amount of code and external dependencies.
 - Static file serving: The server can serve static files from a specified directory.
 - Customizable: The server can be customized using command-line options to specify the port and directory to serve files from.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
