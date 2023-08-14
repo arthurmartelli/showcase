@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .main {
+            background-color: cornflowerblue;
+            color: aliceblue;
+            border-radius: 2rem 2rem 0 0;
+            max-height: 30vh;
+        }
+
+        .image {
+            width: 50%;
+        }
+
+        .image img {
+            height: -webkit-fill-available;
+            padding: 0.5em;
+            margin: 1em;
+        }
+
+        .text {
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main container" role="presentation" style="align-items: center;">
+
+        <div class="image column">
+            <img alt="Flower" src="https://via.placeholder.com/1000">
+        </div>
+
+        <div class="text column">
+
+            <h1> Hola {{ name }}!, te saludamos de {{ company }} </h1>
+
+            <h2>
+                How {{ date }}, te recordamos precio {{ precio }} que debes de seguir tu dieta para lograr los cambios
+                que quieres!
+            </h2>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

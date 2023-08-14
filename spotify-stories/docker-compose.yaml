@@ -1,0 +1,24 @@
+name: ${NAME}
+
+services:
+  dev:
+    image: rust
+    volumes:
+      - .:${WORKING_DIR}
+    working_dir: ${WORKING_DIR}
+    environment:
+      USER: dev
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+    ports:
+      - 5432:5432
+    volumes:
+      - .:/var/lib/postgresql/data
