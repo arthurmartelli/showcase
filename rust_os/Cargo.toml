@@ -11,24 +11,23 @@ readme = "./README.md"
 license-file = "./LICENSE"
 publish = false
 
-# VM and bootable image section
-
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[target.'cfg(target_os = "none")']
-runner = "bootimage runner"
 
-[package.metadata.bootimage]
-build-command = ["build"]
-run-command = ["qemu-system-x86_64", "-drive", "format=raw,file={}"]
+# ! CARGO RUN SECTION
+# ? The runner script to make cargo run does not work on windows
+# ? Implementation on the Makefile
 
-# PANIC HANDLING SECTION
+# [target.'cfg(target_os = "none")']
+# runner = "bootimage runner"
+# [package.metadata.bootimage]
+# build-command = ["build"]
+# run-command = ["qemu-system-x86_64", "-drive", "format=raw,file={}"]
 
-# `cargo build` profile
-[profile.dev]
+# ! PANIC HANDLING SECTION
+[profile.dev] # `cargo build` profile
 panic = "abort" # disable stack unwinding on panic
 
-# `cargo build --release` profile
-[profile.release]
+[profile.release] # `cargo build --release` profile
 panic = "abort" # disable stack unwinding on panic
 
 [dependencies]
