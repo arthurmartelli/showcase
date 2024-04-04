@@ -8,4 +8,4 @@ dev:
 	docker compose up dev
 
 dev-local:
-	cargo watch -x run
+	cargo watch -x run --target thumbv7em-none-eabihf
