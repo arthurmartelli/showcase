@@ -1,11 +1,11 @@
-test_make:
-	echo "Make works!"
-
-server:
-	docker compose up server
-
 dev:
-	docker compose up dev
+	cargo watch -x run
 
-dev-local:
-	cargo watch -x run --target thumbv7em-none-eabihf
+build-all:
+	cargo build && cargo build --release
+
+release:
+	cargo build --release
+
+os:
+	qemu-system-x86_64 -drive format=raw,file=.\target\x86_64-rustos\debug\bootimage-rust_os.bin

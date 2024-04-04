@@ -1,4 +1,4 @@
-# TCP server
+# Rust OS
 
 > This is an attempt to create a small OS in Rust. The guide to follow is [Rust OS][Guide]
 
