@@ -54,14 +54,14 @@
                         <input class="form-control py-4" name="name" type="text" value="{{ $product->name }}" />
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="small mb-1" for="inputLastName">Price (perUnit)</label>
                         <input class="form-control py-4" name="unit_price" type="text" value="{{ $product->unit_price }}" />
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="small mb-1" for="inputLastName">Quantity</label>

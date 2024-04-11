@@ -29,7 +29,7 @@
                                         <!-- <label class="small mb-1" for="inputFirstName">Customer Email</label>
                                         <input class="form-control py-4" name="email" type="text"/> -->
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group" name="company" id="company">
                                         <!-- <label class="small mb-1" for="inputLastName">Company</label>
@@ -56,7 +56,7 @@
                                       <select id="inputState" name="email" class="form-control">
                                         <option selected>Choose...</option>
                                         @foreach($customers as $row)
-                                            @if( $row->id > 1)
+                                            @if($row->id > 1)
                                                 <option>{{ $row->email }}</option>
                                             @endif
                                         @endforeach
@@ -81,7 +81,7 @@
                                       <select id="inputState" name="phone" class="form-control">
                                         <option selected>Choose...</option>
                                         @foreach($customers as $row)
-                                            @if( $row->phone > 1)
+                                            @if($row->phone > 1)
                                                 <option>{{ $row->phone }}</option>
                                             @endif
                                         @endforeach
@@ -94,7 +94,7 @@
                                       <select id="inputState" name="item" class="form-control">
                                         <option selected>Choose...</option>
                                         @foreach($products as $row)
-                                            @if( $row->stock > 1)
+                                            @if($row->stock > 1)
                                                 <option>{{ $row->category }}</option>
                                             @endif
                                         @endforeach
@@ -107,7 +107,7 @@
                                       <select id="inputState" name="name" class="form-control">
                                         <option selected>Choose...</option>
                                         @foreach($products as $row)
-                                            @if( $row->stock > 1)
+                                            @if($row->stock > 1)
                                                 <option>{{ $row->name }}</option>
                                             @endif
                                         @endforeach
@@ -115,15 +115,15 @@
                                     </div>
                                 </div>
 
-                               
-                                
+
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputLastName">Price (perUnit)</label>
                                         <input class="form-control py-4" name="unit_price" type="text"  />
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputLastName">Quantity</label>
@@ -158,7 +158,7 @@
 <script>
 $(document).ready(function(){
     $("#name").change(function() {
-        var c_name = $("#name").val(); 
+        var c_name = $("#name").val();
         console.log(c_name);
         $.ajax({
             type: 'POST',

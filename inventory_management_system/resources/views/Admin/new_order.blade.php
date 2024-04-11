@@ -22,14 +22,14 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div> 
-                    
+                    </div>
+
                         <div class="col-md-6">
                         <div class="form-group" id="email">
                             <!-- <label class="small mb-1" for="inputFirstName">Customer Email</label>
                             <input class="form-control py-4" name="email" type="text"/> -->
                         </div>
-                    </div> 
+                    </div>
                     <div class="col-md-6">
                         <div class="form-group" id="company">
                             <!-- <label class="small mb-1" for="inputLastName">Company</label>
@@ -54,7 +54,7 @@
                             <select id="inputState" name="code" class="form-control">
                             <option selected>Choose...</option>
                             @foreach($products as $row)
-                                @if( $row->stock > 1)
+                                @if($row->stock > 1)
                                     <option>{{ $row->product_code }}</option>
                                 @endif
                             @endforeach
@@ -67,14 +67,14 @@
                             <select id="inputState" name="name" class="form-control">
                             <option selected>Choose...</option>
                             @foreach($products as $row)
-                                @if( $row->stock > 1)
+                                @if($row->stock > 1)
                                     <option value="{{$row->product_code}}">{{ $row->name }}</option>
                                 @endif
                             @endforeach
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="small mb-1" for="inputLastName">Quantity</label>
@@ -96,7 +96,7 @@
 <script>
 $(document).ready(function(){
 $("#name").change(function() {
-    var c_name = $("#name").val(); 
+    var c_name = $("#name").val();
     console.log(c_name);
     $.ajax({
         type: 'POST',

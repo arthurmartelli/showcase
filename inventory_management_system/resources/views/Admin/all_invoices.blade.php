@@ -39,7 +39,7 @@
                         <td>{{ $row->created_at }}</td>
                     </tr>
                     @endforeach
-                    
+
                 </tbody>
             </table>
         </div>
@@ -48,14 +48,14 @@
 @endsection
 @section('script')
 <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        
+
 <script>
-   
+
 
 
    $('#dataTable').DataTable({
     columnDefs: [
-    {bSortable: false, targets: [6]} 
+    {bSortable: false, targets: [6]}
   ],
                 dom: 'lBfrtip',
            buttons: [
@@ -66,7 +66,7 @@
                         page: 'current'
                     },
                        columns: [ 0, ':visible' ]
-                       
+
                    }
                },
                {
