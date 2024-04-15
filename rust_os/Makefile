@@ -8,4 +8,4 @@ build:
 	cargo bootimage
 
 build-release:
-	cargo bootimage
+	cargo bootimage --release
