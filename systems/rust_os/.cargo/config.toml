@@ -4,3 +4,6 @@ target = ".cargo/x86_64-rust_os.json" # path relative to project root
 [unstable]
 build-std-features = ["compiler-builtins-mem"]
 build-std = ["core", "compiler_builtins"]
+
+[target.'cfg(target_os = "none")']
+runner = "bootimage runner"
