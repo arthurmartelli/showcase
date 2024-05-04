@@ -96,3 +96,15 @@ impl fmt::Write for Writer {
         Ok(())
     }
 }
+
+#[test_case]
+fn test_println_output() {
+    let s = "Some test string that fits on a single line";
+    crate::println!("{}", s);
+
+    for (i, c) in s.chars().enumerate() {
+        let screen_char =
+            crate::vga_buffer::WRITER.lock().buffer.chars[BUFFER_HEIGHT - 2][i].read();
+        assert_eq!(char::from(screen_char.ascii_character), c);
+    }
+}
