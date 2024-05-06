@@ -1,4 +1,7 @@
-use crate::{serial_print, serial_println};
+use crate::{
+    libs::qemu::{exit_qemu, QemuExitCode},
+    serial_print, serial_println,
+};
 
 pub trait Testable {
     #[allow(dead_code)]
@@ -6,8 +9,6 @@ pub trait Testable {
 }
 
 pub fn test_runner_handler(tests: &[&dyn Testable]) {
-    use crate::qemu::{exit_qemu, QemuExitCode};
-
     serial_println!("Running {} tests", tests.len());
 
     for test in tests {
@@ -18,8 +19,6 @@ pub fn test_runner_handler(tests: &[&dyn Testable]) {
 }
 
 pub fn test_panic_handler(info: &core::panic::PanicInfo) -> ! {
-    use crate::qemu::{exit_qemu, QemuExitCode};
-
     serial_println!("[failed]");
     serial_println!("Error: {info}");
     exit_qemu(QemuExitCode::Failed);

@@ -17,3 +17,8 @@ pub extern "C" fn _start() -> ! {
 
     loop {}
 }
+
+#[test_case]
+fn test_println() {
+    println!("test_println output");
+}
