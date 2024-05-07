@@ -6,16 +6,8 @@
 #![reexport_test_harness_main = "test_main"] // define test main function
 
 pub mod base;
-mod libs;
+pub mod libs;
 pub mod vga_buffer;
-
-// ! PANIC HANDLER
-#[cfg(not(test))]
-#[panic_handler]
-fn panic(info: &core::panic::PanicInfo) -> ! {
-    println!("{}", info);
-    loop {}
-}
 
 // ! TESTING
 #[cfg(test)]
