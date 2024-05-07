@@ -27,6 +27,12 @@ pub fn test_panic_handler(info: &core::panic::PanicInfo) -> ! {
     loop {}
 }
 
+pub fn test_should_panic() -> ! {
+    serial_println!("[ok]");
+    exit_qemu(QemuExitCode::Success);
+    loop {}
+}
+
 impl<T> Testable for T
 where
     T: Fn(),

@@ -7,7 +7,8 @@
 #![reexport_test_harness_main = "test_main"]
 
 use core::panic::PanicInfo;
-use rust_os::{
+use rust_os_v2::{
+    base::test::test_should_panic,
     libs::qemu::{exit_qemu, QemuExitCode},
     prelude::*,
 };
@@ -27,7 +28,5 @@ fn should_fail() {
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
-    serial_println!("[ok]");
-    exit_qemu(QemuExitCode::Success);
-    loop {}
+    test_should_panic()
 }

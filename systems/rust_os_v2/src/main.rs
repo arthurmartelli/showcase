@@ -3,17 +3,20 @@
 #![no_main] // disable all Rust-level entry points
 // ! TESTING
 #![feature(custom_test_frameworks)]
-#![test_runner(rust_os::base::test::test_runner_handler)]
+#![test_runner(rust_os_v2::base::test::test_runner_handler)]
 #![reexport_test_harness_main = "test_main"]
 
-use rust_os::prelude::*;
+use rust_os_v2::prelude::*;
 
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    println!("Hello World{}", "!");
+    // ! INITIALIZATION
+    rust_os_v2::init();
 
     #[cfg(test)]
     test_main();
+
+    println!("It did not crash!");
 
     #[allow(clippy::empty_loop)]
     loop {}
@@ -30,5 +33,5 @@ fn panic(info: &core::panic::PanicInfo) -> ! {
 #[cfg(test)]
 #[panic_handler]
 fn panic(info: &core::panic::PanicInfo) -> ! {
-    rust_os::base::test::test_panic_handler(info)
+    rust_os_v2::base::test::test_panic_handler(info)
 }
