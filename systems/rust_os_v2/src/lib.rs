@@ -14,7 +14,7 @@ pub mod vga_buffer;
 
 pub fn init() {
     base::gdt::init();
-    base::interrupts::init_idt();
+    base::interrupts::init();
 }
 
 // ! TESTING
