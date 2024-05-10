@@ -18,8 +18,7 @@ pub extern "C" fn _start() -> ! {
 
     println!("It did not crash!");
 
-    #[allow(clippy::empty_loop)]
-    loop {}
+    rust_os_v2::hlt_loop();
 }
 
 // ! PANIC HANDLER
@@ -27,7 +26,7 @@ pub extern "C" fn _start() -> ! {
 #[panic_handler]
 fn panic(info: &core::panic::PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
+    rust_os_v2::hlt_loop();
 }
 
 #[cfg(test)]

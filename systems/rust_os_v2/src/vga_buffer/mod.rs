@@ -5,6 +5,7 @@ use color::{Color, ColorCode};
 use lazy_static::lazy_static;
 // spin-lock mutex to add interior mutability
 use spin::mutex::Mutex;
+use x86_64::instructions::interrupts;
 
 const BUFFER_HEIGHT: usize = 25;
 const BUFFER_WIDTH: usize = 80;
@@ -20,7 +21,10 @@ lazy_static! {
 #[doc(hidden)]
 pub fn _print(args: core::fmt::Arguments) {
     use core::fmt::Write;
-    WRITER.lock().write_fmt(args).unwrap();
+
+    interrupts::without_interrupts(|| {
+        WRITER.lock().write_fmt(args).unwrap();
+    })
 }
 
 /// Prints to the host through the VGA text buffer.
