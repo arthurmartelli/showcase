@@ -6,10 +6,12 @@
 #![test_runner(rust_os_v2::base::test::test_runner_handler)]
 #![reexport_test_harness_main = "test_main"]
 
+use bootloader::{entry_point, BootInfo};
 use rust_os_v2::prelude::*;
 
-#[no_mangle]
-pub extern "C" fn _start() -> ! {
+entry_point!(kernel_main);
+
+fn kernel_main(boot_info: &'static BootInfo) -> ! {
     use x86_64::registers::control::Cr3;
 
     rust_os_v2::init();
