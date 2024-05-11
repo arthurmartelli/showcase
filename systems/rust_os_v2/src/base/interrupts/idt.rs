@@ -3,10 +3,11 @@ use crate::{
         gdt,
         interrupts::pic::{InterruptIndex, PICS},
     },
+    hlt_loop,
     prelude::*,
 };
 use lazy_static::lazy_static;
-use x86_64::structures::idt::{InterruptDescriptorTable, InterruptStackFrame};
+use x86_64::structures::idt::{InterruptDescriptorTable, InterruptStackFrame, PageFaultErrorCode};
 
 pub fn init() {
     IDT.load();
@@ -28,6 +29,7 @@ fn create_idt() -> InterruptDescriptorTable {
 
     idt[InterruptIndex::Timer.into()].set_handler_fn(timer_interrupt_handler);
     idt[InterruptIndex::Keyboard.into()].set_handler_fn(keyboard_interrupt_handler);
+    idt.page_fault.set_handler_fn(page_fault_handler);
     idt
 }
 
@@ -79,6 +81,19 @@ extern "x86-interrupt" fn keyboard_interrupt_handler(_stack_frame: InterruptStac
         PICS.lock()
             .notify_end_of_interrupt(InterruptIndex::Keyboard.into());
     }
+}
+
+extern "x86-interrupt" fn page_fault_handler(
+    stack_frame: InterruptStackFrame,
+    error_code: PageFaultErrorCode,
+) {
+    use x86_64::registers::control::Cr2;
+
+    println!("EXCEPTION: PAGE FAULT");
+    println!("Accessed Address: {:?}", Cr2::read());
+    println!("Error Code: {:?}", error_code);
+    println!("{:#?}", stack_frame);
+    hlt_loop();
 }
 
 #[test_case]
