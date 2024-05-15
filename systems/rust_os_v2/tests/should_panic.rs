@@ -8,7 +8,7 @@
 
 use core::panic::PanicInfo;
 use rust_os_v2::{
-    base::test::test_should_panic,
+    internals::test::test_should_panic,
     libs::qemu::{exit_qemu, QemuExitCode},
     prelude::*,
 };

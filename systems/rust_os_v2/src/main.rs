@@ -3,8 +3,10 @@
 #![no_main] // disable all Rust-level entry points
 // ! TESTING
 #![feature(custom_test_frameworks)]
-#![test_runner(rust_os_v2::base::test::test_runner_handler)]
+#![test_runner(rust_os_v2::internals::test::test_runner_handler)]
 #![reexport_test_harness_main = "test_main"]
+
+extern crate alloc;
 
 use bootloader::{entry_point, BootInfo};
 use rust_os_v2::prelude::*;
@@ -12,7 +14,7 @@ use rust_os_v2::prelude::*;
 entry_point!(kernel_main);
 
 fn kernel_main(boot_info: &'static BootInfo) -> ! {
-    use rust_os_v2::base::memory;
+    use rust_os_v2::internals::{allocator, memory};
     use x86_64::{structures::paging::Page, VirtAddr};
 
     rust_os_v2::init();
@@ -21,6 +23,8 @@ fn kernel_main(boot_info: &'static BootInfo) -> ! {
     let mut mapper = unsafe { memory::init(phys_mem_offset) };
     let mut frame_allocator =
         unsafe { memory::BootInfoFrameAllocator::init(&boot_info.memory_map) };
+
+    allocator::init_heap(&mut mapper, &mut frame_allocator).expect("Heap initialization failed");
 
     // map an unused page
     let page = Page::containing_address(VirtAddr::new(0));
@@ -48,5 +52,5 @@ fn panic(info: &core::panic::PanicInfo) -> ! {
 #[cfg(test)]
 #[panic_handler]
 fn panic(info: &core::panic::PanicInfo) -> ! {
-    rust_os_v2::base::test::test_panic_handler(info)
+    rust_os_v2::internals::test::test_panic_handler(info)
 }

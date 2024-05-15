@@ -1,9 +1,9 @@
 use crate::{
-    base::{
+    hlt_loop,
+    internals::{
         gdt,
         interrupts::pic::{InterruptIndex, PICS},
     },
-    hlt_loop,
     prelude::*,
 };
 use lazy_static::lazy_static;

@@ -3,7 +3,7 @@
 #![feature(abi_x86_interrupt)]
 
 use lazy_static::lazy_static;
-use rust_os_v2::{base::test::test_should_panic, prelude::*};
+use rust_os_v2::{internals::test::test_should_panic, prelude::*};
 use x86_64::structures::idt::{InterruptDescriptorTable, InterruptStackFrame};
 
 lazy_static! {
@@ -12,7 +12,7 @@ lazy_static! {
         unsafe {
             idt.double_fault
                 .set_handler_fn(test_double_fault_handler)
-                .set_stack_index(rust_os_v2::base::gdt::DOUBLE_FAULT_IST_INDEX);
+                .set_stack_index(rust_os_v2::internals::gdt::DOUBLE_FAULT_IST_INDEX);
         }
         idt
     };
@@ -22,7 +22,7 @@ lazy_static! {
 pub extern "C" fn _start() -> ! {
     serial_print!("stack_overflow::stack_overflow...\t");
 
-    rust_os_v2::base::gdt::init();
+    rust_os_v2::internals::gdt::init();
     init_test_idt();
 
     stack_overflow();
@@ -49,5 +49,5 @@ fn stack_overflow() {
 
 #[panic_handler]
 fn panic(info: &core::panic::PanicInfo) -> ! {
-    rust_os_v2::base::test::test_panic_handler(info)
+    rust_os_v2::internals::test::test_panic_handler(info)
 }

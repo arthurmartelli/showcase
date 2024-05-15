@@ -3,18 +3,20 @@
 #![cfg_attr(test, no_main)]
 // ! TESTS
 #![feature(custom_test_frameworks)] // enable custom test framework
-#![test_runner(crate::base::test::test_runner_handler)] // define test runner
+#![test_runner(crate::internals::test::test_runner_handler)] // define test runner
 #![reexport_test_harness_main = "test_main"] // define test main function
 // ! ABI
 #![feature(abi_x86_interrupt)]
 
-pub mod base;
+pub mod internals;
 pub mod libs;
 pub mod vga_buffer;
 
+extern crate alloc;
+
 pub fn init() {
-    base::gdt::init();
-    base::interrupts::init();
+    internals::gdt::init();
+    internals::interrupts::init();
 }
 
 pub fn hlt_loop() -> ! {
@@ -35,7 +37,7 @@ pub extern "C" fn _start() -> ! {
 #[cfg(test)]
 #[panic_handler]
 fn panic(info: &core::panic::PanicInfo) -> ! {
-    base::test::test_panic_handler(info)
+    internals::test::test_panic_handler(info)
 }
 
 pub mod prelude {
