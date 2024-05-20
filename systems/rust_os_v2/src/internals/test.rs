@@ -29,7 +29,7 @@ pub fn test_panic_handler(info: &core::panic::PanicInfo) -> ! {
 pub fn test_should_panic() -> ! {
     serial_println!("[ok]");
     exit_qemu(QemuExitCode::Success);
-    loop {}
+    crate::hlt_loop();
 }
 
 impl<T> Testable for T

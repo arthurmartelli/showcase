@@ -9,13 +9,16 @@
 extern crate alloc;
 
 use bootloader::{entry_point, BootInfo};
-use rust_os_v2::prelude::*;
+use rust_os_v2::{
+    internals::task::{executor::Executor, keyboard, Task},
+    prelude::*,
+};
 
 entry_point!(kernel_main);
 
 fn kernel_main(boot_info: &'static BootInfo) -> ! {
     use rust_os_v2::internals::{allocator, memory};
-    use x86_64::{structures::paging::Page, VirtAddr};
+    use x86_64::VirtAddr;
 
     rust_os_v2::init();
 
@@ -26,19 +29,13 @@ fn kernel_main(boot_info: &'static BootInfo) -> ! {
 
     allocator::init_heap(&mut mapper, &mut frame_allocator).expect("Heap initialization failed");
 
-    // map an unused page
-    let page = Page::containing_address(VirtAddr::new(0));
-    memory::create_example_mapping(page, &mut mapper, &mut frame_allocator);
-
-    // write the string `New!` to the screen through the new mapping
-    let page_ptr: *mut u64 = page.start_address().as_mut_ptr();
-    unsafe { page_ptr.offset(400).write_volatile(0x_f021_f077_f065_f04e) };
-
     #[cfg(test)]
     test_main();
 
-    println!("It did not crash!");
-    rust_os_v2::hlt_loop();
+    let mut executor = Executor::new();
+    executor.spawn(Task::new(example_task()));
+    executor.spawn(Task::new(keyboard::print_keypresses())); // new
+    executor.run();
 }
 
 // ! PANIC HANDLER
@@ -53,4 +50,13 @@ fn panic(info: &core::panic::PanicInfo) -> ! {
 #[panic_handler]
 fn panic(info: &core::panic::PanicInfo) -> ! {
     rust_os_v2::internals::test::test_panic_handler(info)
+}
+
+async fn async_number() -> u32 {
+    42
+}
+
+async fn example_task() {
+    let number = async_number().await;
+    println!("async number: {}", number);
 }
