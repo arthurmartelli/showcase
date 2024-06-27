@@ -1,0 +1,12 @@
+C:\Users\arthu\src\showcase\web\learning-axum\target\debug\deps\libhttparse-5704566a0a6f670d.rmeta: C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src/lib.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\iter.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\macros.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\mod.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\swar.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\sse42.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\avx2.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\runtime.rs
+
+C:\Users\arthu\src\showcase\web\learning-axum\target\debug\deps\httparse-5704566a0a6f670d.d: C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src/lib.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\iter.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\macros.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\mod.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\swar.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\sse42.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\avx2.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\runtime.rs
+
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src/lib.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\iter.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\macros.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\mod.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\swar.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\sse42.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\avx2.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.9.4\src\simd\runtime.rs:

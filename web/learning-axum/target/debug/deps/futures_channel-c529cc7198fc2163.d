@@ -1,0 +1,11 @@
+C:\Users\arthu\src\showcase\web\learning-axum\target\debug\deps\libfutures_channel-c529cc7198fc2163.rmeta: C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\lib.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\lock.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\mpsc\mod.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\mpsc\queue.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\oneshot.rs
+
+C:\Users\arthu\src\showcase\web\learning-axum\target\debug\deps\libfutures_channel-c529cc7198fc2163.rlib: C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\lib.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\lock.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\mpsc\mod.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\mpsc\queue.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\oneshot.rs
+
+C:\Users\arthu\src\showcase\web\learning-axum\target\debug\deps\futures_channel-c529cc7198fc2163.d: C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\lib.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\lock.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\mpsc\mod.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\mpsc\queue.rs C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\oneshot.rs
+
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\lib.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\lock.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\mpsc\mod.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\mpsc\queue.rs:
+C:\Users\arthu\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.30\src\oneshot.rs:
