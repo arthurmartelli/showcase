@@ -27,6 +27,13 @@ Creating a very basic of X/Twitter: a micro blogging platform
 
 ## Tech & Crates
 
-- Rust v1.79.0
+- rustc v1.79.0
     - axum v0.7.5
-    - sqlxcar
+    - dotenvy v0.15.7
+    - eyre v0.6.12
+    - tokio v1.38.0
+        - -F net,rt-multi-thread,macros
+    - tracing v0.1.40
+    - tracing_subscriber v0.3.18
+    - tower-http v0.5.2
+        - -F tracing

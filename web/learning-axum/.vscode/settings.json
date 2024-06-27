@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["axum", "sqlx", "SQLX"]
+  "cSpell.words": [
+    "axum",
+    "dotenv",
+    "dotenvy",
+    "rustc",
+    "sqlx",
+    "SQLX",
+    "tokio"
+  ]
 }
