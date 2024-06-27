@@ -4,9 +4,11 @@
     "dotenv",
     "dotenvy",
     "postgres",
+    "psql",
     "rustc",
     "sqlx",
     "SQLX",
-    "tokio"
+    "tokio",
+    "varchar"
   ]
 }

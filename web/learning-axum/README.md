@@ -37,4 +37,34 @@ Creating a very basic of X/Twitter: a micro blogging platform
     - tracing_subscriber v0.3.18
     - tower-http v0.5.2
         - -F tracing
+    - sqlx
 - postgres v16.3 inside docker
+- cli (use `cargo install`)
+    - sqlx-cli 0.7.4
+
+## Setup
+
+1. Create the `.env` from the [`.env_example`](./.env_example) file.
+
+    ```sh
+    cp .env_example .env
+    ```
+
+## Database
+
+A docker compose file is included to spin up a Postgres database. If you have docker installed, you can use the command:
+
+```sh
+docker compose up -d
+```
+
+### Models
+
+#### Posts
+
+| PK  | FK  | Name      | Type         |
+| --- | --- | --------- | ------------ |
+| *   | *   | post_id   | serial       |
+|     |     | parent_id | int          |
+|     |     | text      | varchar(255) |
+|     |     | likes     | int          |
