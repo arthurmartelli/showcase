@@ -3,6 +3,7 @@
     "axum",
     "dotenv",
     "dotenvy",
+    "postgres",
     "rustc",
     "sqlx",
     "SQLX",

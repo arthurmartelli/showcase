@@ -37,3 +37,4 @@ Creating a very basic of X/Twitter: a micro blogging platform
     - tracing_subscriber v0.3.18
     - tower-http v0.5.2
         - -F tracing
+- postgres v16.3 inside docker
